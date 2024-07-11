@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>hkn7b.dev</groupId>
-    <artifactId>product-service</artifactId>
+    <artifactId>checkout-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>product-service</name>
-    <description>product-service</description>
+    <name>checkout-service</name>
+    <description>checkout-service</description>
     <url/>
     <licenses>
         <license/>
@@ -37,6 +37,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
