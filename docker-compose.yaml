@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 networks:
   development:
@@ -7,19 +7,35 @@ networks:
 volumes:
   mysql_home:
 
+mongodb:
+  container_name: mongodb
+  hostname: mongodb
+  image: mongo:latest
+  restart: always
+  environment:
+    MONGO_INITDB_ROOT_USERNAME: developer
+    MONGO_INITDB_ROOT_PASSWORD: toor
+  ports:
+    - 27017:27017
+    - 27018:27018
+    - 27019:27019
+    - 27020:27020
+  networks:
+    - development
+
 mysql:
-    container_name: mysql
-    hostname: mysql
-    image: mysql:lts
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'fullstack'
-      MYSQL_USER: 'developer'
-      MYSQL_PASSWORD: 'secret'
-      MYSQL_ROOT_PASSWORD: 'toor'
-    ports:
-      - 3306:3306
-    volumes:
-      - mysql_home:/var/lib/mysql
-    networks:
-      - development
+  container_name: mysql
+  hostname: mysql
+  image: mysql:lts
+  restart: always
+  environment:
+    MYSQL_DATABASE: 'fullstack'
+    MYSQL_USER: 'developer'
+    MYSQL_PASSWORD: 'secret'
+    MYSQL_ROOT_PASSWORD: 'toor'
+  ports:
+    - 3306:3306
+  volumes:
+    - mysql_home:/var/lib/mysql
+  networks:
+    - development
