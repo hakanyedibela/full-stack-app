@@ -1,0 +1,10 @@
+spring:
+  application:
+  name: catalog-service
+  data:
+    mongodb:
+      username: developer
+      password: toor
+      uri: mongodb://localhost:27017
+server:
+  port: 18080

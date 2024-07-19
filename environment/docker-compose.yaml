@@ -1,0 +1,37 @@
+version: '3.9'
+
+networks:
+  development:
+    driver: bridge
+    name: fullstack
+
+volumes:
+  mongodb-data:
+    driver: local
+    name: mongodb-data
+  mongodb-log:
+    driver: local
+    name: mongodb-log
+
+services:
+  mongodb:
+    container_name: mongodb
+    hostname: mongodb
+    image: mongo:latest
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${PASSWORD}
+      MONGO_INITDB_DATABASE: ${DATABASE}
+    ports:
+      - 27017:27017
+      - 27018:27018
+      - 27019:27019
+      - 27020:27020
+    networks:
+      - development
+    volumes:
+      - mongodb-data:/data/db/
+      - mongodb-log:/var/log/mongodb/
