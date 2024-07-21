@@ -3,8 +3,9 @@ spring:
   name: catalog-service
   data:
     mongodb:
-      username: developer
+      username: root
       password: toor
-      uri: mongodb://localhost:27017
+      uri: mongodb://localhost:27017/commerce
+      auto-index-creation: false
 server:
   port: 18080
