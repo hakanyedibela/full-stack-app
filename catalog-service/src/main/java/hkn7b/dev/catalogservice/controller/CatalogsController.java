@@ -6,7 +6,6 @@ import hkn7b.dev.catalogservice.exception.CatalogNotFoundException;
 import hkn7b.dev.catalogservice.model.Catalog;
 import hkn7b.dev.catalogservice.repository.CatalogRepository;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,18 +22,12 @@ public class CatalogsController {
         this.catalogRepository = catalogRepository;
     }
 
-    @GetMapping(path = "/livenessProbe",
-            name = "livenessProbe",
-            produces = MediaType.APPLICATION_JSON_VALUE,
-            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/livenessProbe")
     public ResponseEntity<String> getLivenessProbe() {
         return new ResponseEntity<>("Liveness Probe successfully established.", HttpStatus.OK);
     }
 
-    @GetMapping(path = "/catalogs",
-            name = "getAllCatalogs",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/catalogs")
     public Flux<Catalog> getAllCatalogs() {
         return catalogRepository
                 .findAll()
