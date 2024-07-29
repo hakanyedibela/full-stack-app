@@ -28,6 +28,9 @@ public class TeamMember {
     @Column(name = "job_description", nullable = false)
     private String jobPosition;
 
+    @Column(name = "job_code", unique = true, nullable = false)
+    private String jobCode;
+
     @Column(name = "age", length = 100, nullable = false)
     private int age;
 

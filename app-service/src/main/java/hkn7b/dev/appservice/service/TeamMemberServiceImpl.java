@@ -1,15 +1,15 @@
 package hkn7b.dev.appservice.service;
 
 import hkn7b.dev.appservice.model.TeamMember;
-import hkn7b.dev.appservice.repository.TeamMemberReposiotry;
+import hkn7b.dev.appservice.repository.TeamMemberRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TeamMemberServiceImpl implements TeamMemberService {
 
-    private final TeamMemberReposiotry teamMemberReposiotry;
+    private final TeamMemberRepository teamMemberReposiotry;
 
-    public TeamMemberServiceImpl(TeamMemberReposiotry teamMemberReposiotry) {
+    public TeamMemberServiceImpl(TeamMemberRepository teamMemberReposiotry) {
         this.teamMemberReposiotry = teamMemberReposiotry;
     }
 
