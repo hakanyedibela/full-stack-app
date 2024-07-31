@@ -26,7 +26,7 @@ public class AppServiceController {
 
     @GetMapping(path = "/livenessProbe",
                 name = "livenessProbe",
-                consumes = MediaType.APPLICATION_JSON_VALUE,
+                consumes = MediaType.ALL_VALUE,
                 produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> livenessProbe() throws AppServiceException {
         return new ResponseEntity<>("Liveness Probe successfully established!", HttpStatus.OK);
