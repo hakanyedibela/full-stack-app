@@ -1,1 +1,1 @@
-INSERT INTO team_member_address (street, house_number, postal_code, place, country, phone_number, mobile_number) VALUES ("Pariser Platz", 4, 17172, "Berlin", "Germany", "0911 179 7555", "0151 45898343");
+INSERT INTO team_member_address VALUES ("Pariser Platz", 4, 17172, "Berlin", "Germany", "0911 179 7555", "0151-45898343");
