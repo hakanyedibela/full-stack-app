@@ -1,0 +1,8 @@
+greeting:
+  message: "hello"
+quarkus:
+  log:
+    console:
+      json:
+        pretty-print: false
+        print-details: true
