@@ -1,14 +1,14 @@
 package hkn7b.dev.appservice.service;
 
-import hkn7b.dev.appservice.facade.ApplicationFacade;
+import hkn7b.dev.appservice.dao.ApplicationDao;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ApplicationService {
 
-    private final ApplicationFacade applicationFacade;
+    private final ApplicationDao applicationFacade;
 
-    public ApplicationService(ApplicationFacade applicationFacade) {
+    public ApplicationService(ApplicationDao applicationFacade) {
         this.applicationFacade = applicationFacade;
     }
 
