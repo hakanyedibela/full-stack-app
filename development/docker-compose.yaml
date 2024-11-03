@@ -1,0 +1,10 @@
+services:
+  dbms:
+    container_name: maria-db
+    hostname: maria-db
+    image: mariadb:lts
+    restart: unless-stopped
+    ports:
+      - "13306:3306"
+    env_file:
+      .env
