@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: app-service
+    liquibase:
+        change-log: db/changelog/db.changelog-master.xml
+        enabled: true
+    datasource:
+        url: jdbc:mariadb://localhost:13306/fullstack
+        username: fullstack
+        password: secret
+        name: maria-db
+    jpa:
+        hibernate:
+            ddl-auto: none
